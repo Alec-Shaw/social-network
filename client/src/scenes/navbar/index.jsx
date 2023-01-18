@@ -56,11 +56,11 @@ const Navbar = () => {
             },
           }}
         >
-          MY SOCIAL NETWORK
+          MY NETWORK
         </Typography>
         {isNonMobileScreens && (
           <FlexBetween
-            background={neutralLight}
+            backgroundColor={neutralLight}
             borderRadius="9px"
             gap="3rem"
             padding="0.1rem 1.5rem"
@@ -72,10 +72,11 @@ const Navbar = () => {
           </FlexBetween>
         )}
       </FlexBetween>
+
       {/* DESKTOP NAV */}
       {isNonMobileScreens ? (
         <FlexBetween gap="2rem">
-          <IconButton onClick={() => dispatch(setMode)}>
+          <IconButton onClick={() => dispatch(setMode())}>
             {theme.palette.mode === "dark" ? (
               <DarkMode sx={{ fontSize: "25px" }} />
             ) : (
@@ -117,6 +118,7 @@ const Navbar = () => {
           <Menu />
         </IconButton>
       )}
+
       {/* MOBILE NAV */}
       {!isNonMobileScreens && isMobileMenuToggled && (
         <Box
